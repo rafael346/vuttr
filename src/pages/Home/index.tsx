@@ -1,15 +1,33 @@
 import { useState } from "react";
 
+import { useData } from "../../context/DataContext";
 import { AddButton } from "./components/AddButton";
 import { TextField } from "./components/TextField";
-import { Container, Content, MainHeader, Header, SubTitle, Title } from "./styles";
 import { CheckBox } from "./components/CheckBox";
 import { CardList } from "./components/CardList";
 import { NewToolModal } from "../../components/CreateToolsForm/Modal";
 
+import { Container, Content, MainHeader, Header, SubTitle, Title } from "./styles";
 
 export default function Home(){
   const [modalVisible, setModalVisible] = useState(false)
+  const { search, setSearch, reload, setReload,checked, setChecked}= useData();
+ 
+  function handleSearch(event:React.ChangeEvent<HTMLInputElement>){
+    setSearch(event.target.value)
+    setReload(!reload)
+  }
+
+  function handleToggleSearch(){
+    setChecked(!checked)
+  }
+
+  function handleOpenModal(){
+    setModalVisible(true)
+  }
+  function handleCloseModal(){
+    setModalVisible(false) 
+  }
 
   return(
     <Container>
@@ -20,15 +38,16 @@ export default function Home(){
         <SubTitle>Very Useful Tools to Remember</SubTitle>
       </Header>
 
-      <Content>
-        <MainHeader>
-          <TextField />
-          <CheckBox />
-          <AddButton handleFunction={()=>setModalVisible(true)} />
+      <MainHeader>
+          <TextField value={search} onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleSearch(event)}/>
+          <CheckBox onClick={handleToggleSearch} />
+          <AddButton handleFunction={handleOpenModal} />
         </MainHeader>
+      <Content>
+        
         <CardList />
       </Content>
-      <NewToolModal isOpen={modalVisible} onRequestClose={() =>setModalVisible(!modalVisible) } />
+      <NewToolModal isOpen={modalVisible} onRequestClose={handleCloseModal} />
     </Container>
   )
 

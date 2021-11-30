@@ -18,6 +18,7 @@ export function CardList(){
           <Card
             key={tool.id}
             id={tool.id}
+            title={tool.title}
             link={tool.link}
             text={tool.description}
             tags={tool.tags}

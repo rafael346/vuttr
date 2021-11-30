@@ -1,12 +1,12 @@
 import { Container, Header, RemoveButton, Title,Content, Footer, Tag } from "./styles";
 import { Card as CardProps} from "../../../../@types/card";
 
-export function Card({ id, link, text, tags, onRemove}: CardProps){
+export function Card({ id, link, text, title, tags, onRemove}: CardProps){
   return(
     <Container>
       <Header>
         <Title>
-          {link}
+          {title}
         </Title>
         <RemoveButton onClick={onRemove}>remove</RemoveButton>
       </Header>
