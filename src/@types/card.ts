@@ -4,5 +4,5 @@ export type Card = {
   title: string;
   link: string;
   tags: Array<string>;
-  onRemove: () => Promise<void>;
+  showModal: () => void;
 }

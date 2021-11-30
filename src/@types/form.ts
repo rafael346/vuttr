@@ -8,6 +8,11 @@ export type ModalProps ={
   isOpen: boolean;
   onRequestClose: () => void;
 }
+export type ModalRemoveProps ={
+  isOpen: boolean;
+  onRequestClose: () => void;
+  onRemove: ()=> Promise<void>
+}
 export type FormData ={
   name: string;
   link: string;

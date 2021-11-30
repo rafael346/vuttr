@@ -31,7 +31,6 @@ export const Content = styled.main`
 export const Header = styled.header`
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
   margin-bottom: 2rem;
   margin-left:  7.5rem;
  
