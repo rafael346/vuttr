@@ -11,7 +11,7 @@ import { useData } from '../../../context/DataContext';
 
 export function NewToolModal({ isOpen, onRequestClose } : ModalProps ){
   const {reload, setReload} = useData();
-  const { register, handleSubmit, formState } = useForm({ resolver: yupResolver(ToolsFormSchema)});
+  const { register, handleSubmit, formState,reset } = useForm({ resolver: yupResolver(ToolsFormSchema)});
   const { errors} = formState
   const handleCreateTool:SubmitHandler<FormData> = async (values)=>{
     const formattedTags = values.tag.split(" ");
@@ -30,6 +30,7 @@ export function NewToolModal({ isOpen, onRequestClose } : ModalProps ){
       onRequestClose();
     }
    console.log("response::",response);
+   reset()
   }
 
   return(
