@@ -14,6 +14,13 @@ export const Container = styled.div`
 `
 export const Content = styled.main`
   width: 50%;
+  
+  @media (max-width: 720px){
+      width: 70%;
+  }
+  @media (max-width: 320px){
+      width: 90%;
+  }
 `
 
 export const MainHeader = styled.header`
