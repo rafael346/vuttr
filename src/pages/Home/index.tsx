@@ -7,7 +7,7 @@ import { CheckBox } from "./components/CheckBox";
 import { CardList } from "./components/CardList";
 import { NewToolModal } from "../../components/CreateToolsForm/Modal";
 
-import { Container, Content, MainHeader, Header, SubTitle, Title } from "./styles";
+import { Container, Content, MainHeader, Header,CardListContainer, SubTitle, Title } from "./styles";
 
 export default function Home(){
   const [modalVisible, setModalVisible] = useState(false)
@@ -31,6 +31,7 @@ export default function Home(){
 
   return(
     <Container>
+      <Content>
       <Header>
         <Title>
           VUTTR
@@ -39,13 +40,14 @@ export default function Home(){
       </Header>
 
       <MainHeader>
-          <TextField value={search} onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleSearch(event)}/>
-          <CheckBox onClick={handleToggleSearch} />
-          <AddButton handleFunction={handleOpenModal} />
-        </MainHeader>
-      <Content>
-        
+        <TextField value={search} onChange={(event:React.ChangeEvent<HTMLInputElement>) => handleSearch(event)}/>
+        <CheckBox onClick={handleToggleSearch} />
+        <AddButton handleFunction={handleOpenModal} />
+      </MainHeader>
+
+      <CardListContainer>
         <CardList />
+      </CardListContainer>
       </Content>
       <NewToolModal isOpen={modalVisible} onRequestClose={handleCloseModal} />
     </Container>

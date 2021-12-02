@@ -1,5 +1,5 @@
-import { Container, Input } from "./styles";
-import {AiOutlineSearch as Icon} from 'react-icons/ai'
+import { Container, Input, Icon } from "./styles";
+
 
 export function TextField({...rest}){
   return(

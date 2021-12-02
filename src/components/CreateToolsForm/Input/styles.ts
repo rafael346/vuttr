@@ -5,7 +5,8 @@ export const Container = styled.article`
 `
 
 export const Label = styled.label`
-  font-size:  1rem;
+  font-size:  1.25rem;
+  font-weight: 600;
   margin-bottom: 0.25rem;
 `;
 
@@ -15,6 +16,7 @@ export const Input = styled.input`
   background: var(--darkestWhite);
   border: none;
   border-radius: 5px;
+  padding-left: 0.5rem;
   
   &::placeholder{
     color: var(--lighterInk);
@@ -28,5 +30,5 @@ export const Input = styled.input`
 export const ErrorMessage = styled.label`
   font-size:  0.75rem;
   font-weight: 600;
-  color: red;
+  color: #CC4C4C;
 `;

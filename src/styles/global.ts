@@ -9,7 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     --ink: #170C3A;
     --lighterInk: #b1adb9;
 
-    --blue: #365DF0;
+    --darkBlue: #2F55CC
+    --primaryBlue: #365DF0;
 
     --darkerGreen:#0E995D;
     --darkGreen:#10B26C;
@@ -22,6 +23,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+    background: #fbfbfb;
 
   }
 
@@ -56,26 +59,17 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
   }
   .react-modal-content {
-    width: 35.625rem;
-    height: 38.5rem;
+    width: 30rem;
+    height: auto;
     background: var(--white);
     padding: 1.5rem;
     position: relative;
     border-radius: 0.25rem;
   }
-  .react-modal-close {
-    position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
-    border: 0;
-    background: transparent;
-    transition: filter 0.2s;
-    &:hover {
-      filter: brightness(0.6);
-    }
-  }
+ 
   .react-modal-title{
     font-size: 1.5rem;
+    font-weight: 800;
   
   }
 `

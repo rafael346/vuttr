@@ -4,7 +4,7 @@ import{ yupResolver} from '@hookform/resolvers/yup'
 import { ToolsFormSchema } from '../FormValidation';
 import { ModalProps, FormData } from "../../../@types/form";
 import { InputForm } from "../Input";
-import { Container } from "./styles";
+import { Container, CloseButton, Icon } from "./styles";
 import { Button } from "../SubmitButton/styles";
 import { api } from '../../../services/api';
 import { useData } from '../../../context/DataContext';
@@ -39,13 +39,13 @@ export function NewToolModal({ isOpen, onRequestClose } : ModalProps ){
       overlayClassName="react-modal-overlay"
       className="react-modal-content"
     >
-      <button
+      <CloseButton
       type="button" 
       onClick={onRequestClose} 
       className="react-modal-close"
     >
-      X
-    </button>
+      <Icon />
+    </CloseButton>
     <h2 className="react-modal-title"> + Add new Tool</h2>
     <Container onSubmit={handleSubmit(handleCreateTool)}>
       <InputForm  label='Tool Name' {...register('name')} error={errors.name} />

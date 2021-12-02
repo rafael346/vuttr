@@ -1,6 +1,6 @@
-import {BsPlusLg as Icon} from 'react-icons/bs'
 
-import { Button } from "./styles";
+
+import { Button, Icon } from "./styles";
 type ButtonProps ={
   handleFunction: ()=>void;
 }

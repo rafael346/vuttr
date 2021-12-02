@@ -10,6 +10,8 @@ export const Button = styled.button`
   border: none;
   background: #0DCB7D;
   color: #ffff;
+  font-size: 1.125rem;
+  font-weight: 600;
 
   transition: filter 0.2s;
 

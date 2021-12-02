@@ -1,5 +1,7 @@
-import { Container, Header, RemoveButton, Title,Content, Footer, Tag } from "./styles";
+import { useState } from "react";
+import { Container, Header, RemoveButton, Icon, Title,Content, Footer, Tag } from "./styles";
 import { Card as CardProps} from "../../../../@types/card";
+import { useData } from "../../../../context/DataContext";
 
 export function Card({ id, link, text, title, tags, showModal}: CardProps){
   return(
@@ -8,16 +10,21 @@ export function Card({ id, link, text, title, tags, showModal}: CardProps){
         <Title href={link}>
           {title}
         </Title>
-        <RemoveButton onClick={showModal}>remove</RemoveButton>
+        <RemoveButton onClick={showModal}>
+          <Icon />
+          remove
+        </RemoveButton>
       </Header>
       <Content>
-        {text}
+        <p>{text}</p>
       </Content>
       <Footer>
-        {tags.map(tag =>(
-          <Tag>{"#"}{tag}{" "}</Tag>
+        {tags.map(tag =>( 
+          <Tag>
+            {"#"}{tag}{" "}
+          </Tag>
         )
-          )}
+        )}
         
       </Footer>
     </Container>

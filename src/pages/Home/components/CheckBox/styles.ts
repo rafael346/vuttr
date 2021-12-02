@@ -11,6 +11,7 @@ export const Label = styled.label`
   align-items: center;
   justify-content: center;
   margin: 0 1rem;
+  font-weight: 600;
 
 `
 export const Input = styled.input`
